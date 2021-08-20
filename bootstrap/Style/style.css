@@ -1,0 +1,12 @@
+.under-line {
+    padding-bottom: 5px;
+}
+.promo-code-input{
+    border: 1px solid ;
+    border-radius: 3px;
+}
+.promo-btn{
+    padding-bottom: 0;
+    padding-top:5px;
+    
+}
