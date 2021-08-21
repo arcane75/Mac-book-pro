@@ -6,20 +6,20 @@ const extraDeliveryCost = document.getElementById('delivery-charge');
 const promoInput = document.getElementById('promoCode-input');
 
 
-//Update Memory total Cost
+//--------------------------Update Memory total Cost--------------------------
 function updateMemoryCost(product, price) {
     const memoryPrice = price;
     const extraMemoryCost = document.getElementById('extra-memory');
     extraMemoryCost.innerText = memoryPrice;
 
 }
-//Update Storage Total Cost
+//--------------------------Update Storage Total Cost--------------------------
 function updateStorageCost(product, price) {
     const storagePrice = price;
     const extraStorageCost = document.getElementById('extra-storage');
     extraStorageCost.innerText = storagePrice;
 }
-// Update Delivery Total Cost
+//-------------------------- Update Delivery Total Cost--------------------------
 function updateDeliveryCost(product, price) {
     const deliveryCost = price;
     const extraDeliveryCost = document.getElementById('delivery-charge');
@@ -28,7 +28,7 @@ function updateDeliveryCost(product, price) {
 
 
 
-//Memory Selection
+//--------------------------Memory Selection--------------------------
 document.getElementById("eightGB-memory-btn").addEventListener('click', function () {
     updateMemoryCost('memory', 0);
     calculateTotal();
@@ -39,7 +39,7 @@ document.getElementById("sixteenGB-memory-btn").addEventListener('click', functi
 })
 
 
-//Storage Selection
+//--------------------------Storage Selection--------------------------
 document.getElementById("ssd256-btn").addEventListener('click', function () {
     updateStorageCost('storage', 0);
     calculateTotal();
@@ -53,7 +53,7 @@ document.getElementById("ssd1TB-btn").addEventListener('click', function () {
     calculateTotal();
 })
 
-// Shipping Method
+//--------------------------Shipping Method--------------------------
 document.getElementById("free-delivery").addEventListener('click', function () {
     updateDeliveryCost('delivery', 0);
     calculateTotal();
@@ -63,7 +63,7 @@ document.getElementById("paid-delivery").addEventListener('click', function () {
     calculateTotal();
 })
 
-//Calculate Total
+//--------------------------Calculate Total--------------------------
 function calculateTotal() {
     const memoryTotal = Number(extraMemoryCost.innerText);
     const storageTotal = Number(extraStorageCost.innerText);
@@ -73,7 +73,7 @@ function calculateTotal() {
     //console.log(grandTotal);
     totalPrice.innerText = grandTotal;
     grandAmount.innerText = grandTotal;
-   // Return total price
+    // Return total price
     return totalPrice.innerText;
 }
 
