@@ -30,8 +30,8 @@
                                     <h4>Memory</h4>
                                 </div>
                                 <div class="col-lg-12">
-                                    <button>8GB Unified Memory</button>
-                                    <button>16GB Unified Memory</button>
+                                    <button id="eightGB-memory-btn" onclick="eightGBButtonDisable()" >8GB Unified Memory</button>
+                                    <button id="sixteenGB-memory-btn" onclick="sixteenGBButtonDisable()" >16GB Unified Memory</button>
                                 </div>
                             </div>
                         </div>
@@ -42,9 +42,9 @@
                                     <h4>Storage</h4>
                                 </div>
                                 <div class="col-lg-12">
-                                    <button>256GB SSD Storage</button>
-                                    <button>512GB SSD Storage</button>
-                                    <button>1TB SSD Storage</button>
+                                    <button id="ssd256-btn" onclick="storage256ButtonDisable()" >256GB SSD Storage</button>
+                                    <button id="ssd512-btn" onclick="storage512ButtonDisable()" >512GB SSD Storage</button>
+                                    <button id="ssd1TB-btn" onclick="storage1TBButtonDisable()"  >1TB SSD Storage</button>
                                 </div>
                             </div>
                         </div>
@@ -55,8 +55,8 @@
                                     <h4>Choose your delivery option</h4>
                                 </div>
                                 <div class="col-lg-12">
-                                    <button>Friday, Aug 25 Free Prime Delivery</button>
-                                    <button>Friday, Aug 21 Delivery Charge $20</button>
+                                    <button id="free-delivery" onclick="freeDelButtonDisable()" >Friday, Aug 25 Free Prime Delivery</button>
+                                    <button id="paid-delivery" onclick="paidDelButtonDisable()" >Friday, Aug 21 Delivery Charge $20</button>
                                 </div>
                             </div>
                         </div>
@@ -73,10 +73,10 @@
                                 </div>
 
                                 <div class="col-lg-4 col-md-4 status">
-                                    <h5>$<span id="sub-total">1299</span></h5>
-                                    <h5>$<span id="tax-amount">0</span></h5>
-                                    <h5>$<span id="total-price">0</span></h5>
-                                    <h5>$<span id="total-price">0</span></h5>
+                                    <h5>$<span id="best-price">1299</span></h5>
+                                    <h5>$<span id="extra-memory">0</span></h5>
+                                    <h5>$<span id="extra-storage">0</span></h5>
+                                    <h5>$<span id="delivery-charge">0</span></h5>
                                 </div>
                             </div>
                             <hr class="under-line">
@@ -89,7 +89,7 @@
                                 </div>
 
                                 <div class="col-lg-4 col-md-4 status">
-                                    <h5>$<span id="sub-total">1299</span></h5>
+                                    <h5>$<span id="total-price">1299</span></h5>
                                 </div>
                             </div>
                         </div>
@@ -102,8 +102,8 @@
                                 </div>
 
                                 <div class="col-lg-12 col-md-12 status">
-                                    <input type="text" class="promo-code-input" name="" id="">
-                                    <button class="btn btn-danger">Apply</button>
+                                    <input type="text" class="promo-code-input" name="" id="promoCode-input">
+                                    <button id="promoCode-applyBtn" class="btn btn-danger">Apply</button>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +112,8 @@
                 </div>
                 <hr>
                 <div class="text-center">
-                    <h3>Total: $<span id="">1299</span></h3>
+                    <h3>Total: $<span id="grand-total">1299</span></h3>
+
                 </div>
             </div>
         </section>
