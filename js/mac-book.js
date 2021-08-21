@@ -38,31 +38,66 @@ function paidDelButtonDisable() {
 }
 
 
+const totalPrice = document.getElementById('totalPrice');
+const grandAmount = document.getElementById('grand-total');
+const extraMemoryCost = document.getElementById('extra-memory');
+const extraStorageCost = document.getElementById('extra-storage');
+const extraDeliveryCost = document.getElementById('delivery-charge');
+
 
 //Memory Selection
 document.getElementById("eightGB-memory-btn").addEventListener('click', function () {
-    //console.log('clicked');
-    document.getElementById('extra-memory').innerText = '0';
+  
+    extraMemoryCost.innerText = '0';
+    calculateTotal();
 })
 document.getElementById("sixteenGB-memory-btn").addEventListener('click', function () {
-    document.getElementById('extra-memory').innerText = '180';
+   
+    extraMemoryCost.innerText = '180';
+    calculateTotal();
 })
+
 
 //Storage Selection
 document.getElementById("ssd256-btn").addEventListener('click', function () {
-    document.getElementById('extra-storage').innerText = '0';
+  
+    extraStorageCost.innerText = '0';
+    calculateTotal();
 })
 document.getElementById("ssd512-btn").addEventListener('click', function () {
-    document.getElementById('extra-storage').innerText = '100';
+    //document.getElementById('extra-storage').innerText = '100';
+    //updateStorageCost('storage', 100);
+    extraStorageCost.innerText = '100';
+    calculateTotal();
 })
 document.getElementById("ssd1TB-btn").addEventListener('click', function () {
-    document.getElementById('extra-storage').innerText = '180';
+ 
+    extraStorageCost.innerText = '180';
+    calculateTotal();
 })
 
 // Shipping Method
 document.getElementById("free-delivery").addEventListener('click', function () {
-    document.getElementById('delivery-charge').innerText = '0';
+    //updateDeliveryCost('delivery', 0);
+    extraDeliveryCost.innerText = '0';
+    calculateTotal();
 })
 document.getElementById("paid-delivery").addEventListener('click', function () {
-    document.getElementById('delivery-charge').innerText = '20';
+  
+    extraDeliveryCost.innerText = '20';
+    calculateTotal();
 })
+
+//Calculate Total
+function calculateTotal() {
+    
+    const memoryTotal = Number(extraMemoryCost.innerText);
+    const storageTotal = Number(extraStorageCost.innerText);
+    const deliveryTotal = Number(extraDeliveryCost.innerText);
+
+    const grandTotal = 1299 + memoryTotal + storageTotal + deliveryTotal;
+    //console.log(grandTotal);
+    totalPrice.innerText = grandTotal;
+    grandAmount.innerText = grandTotal;
+    //console.log(totalPrice.innerText);
+}
