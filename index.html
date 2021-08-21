@@ -15,53 +15,67 @@
     <header>
         <h1 class="text-center">BUY MAC BOOK Pro</h1>
     </header>
+    <!-- -------------------------------Main Part --------------------------->
     <main>
         <section class="mb-5">
             <div class="container">
                 <div class="row">
+
                     <div class="col-lg-6 ">
                         <img class="img-fluid " src="images/mac.png" alt="">
                     </div>
+
                     <div class="col-lg-6">
-                        <!-- Memory Part -->
+                        <!-- ----------------------Memory Part--------------------------- -->
                         <div class="container">
                             <div class="row mb-5">
+
                                 <div class="col-lg-12">
                                     <h4>Memory</h4>
                                 </div>
+                                <!--------------------- Memory Choose Button ---------------------->
                                 <div class="col-lg-12">
-                                    <button id="eightGB-memory-btn" onclick="eightGBButtonDisable()" >8GB Unified Memory</button>
-                                    <button id="sixteenGB-memory-btn" onclick="sixteenGBButtonDisable()" >16GB Unified Memory</button>
+                                    <button id="eightGB-memory-btn" onclick="eightGBButtonDisable()">8GB Unified
+                                        Memory</button>
+                                    <button id="sixteenGB-memory-btn" onclick="sixteenGBButtonDisable()">16GB Unified
+                                        Memory</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Storage Part -->
+                        <!-------------- Storage Part --------------------->
                         <div class="container">
                             <div class="row mb-5">
                                 <div class="col-lg-12">
                                     <h4>Storage</h4>
                                 </div>
+                                <!--------------------- Storage Choose Button ---------------------->
                                 <div class="col-lg-12">
-                                    <button id="ssd256-btn" onclick="storage256ButtonDisable()" >256GB SSD Storage</button>
-                                    <button id="ssd512-btn" onclick="storage512ButtonDisable()" >512GB SSD Storage</button>
-                                    <button id="ssd1TB-btn" onclick="storage1TBButtonDisable()"  >1TB SSD Storage</button>
+                                    <button id="ssd256-btn" onclick="storage256ButtonDisable()">256GB SSD
+                                        Storage</button>
+                                    <button id="ssd512-btn" onclick="storage512ButtonDisable()">512GB SSD
+                                        Storage</button>
+                                    <button id="ssd1TB-btn" onclick="storage1TBButtonDisable()">1TB SSD Storage</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Delivery Options -->
+                        <!-------------------- Delivery Options ------------------------------>
                         <div class="container">
                             <div class="row mb-5">
+
                                 <div class="col-lg-12">
                                     <h4>Choose your delivery option</h4>
                                 </div>
+                                <!----------------- Choose Delivery Method --------------------------->
                                 <div class="col-lg-12">
-                                    <button id="free-delivery" onclick="freeDelButtonDisable()" >Friday, Aug 25 Free Prime Delivery</button>
-                                    <button id="paid-delivery" onclick="paidDelButtonDisable()" >Friday, Aug 21 Delivery Charge $20</button>
+                                    <button id="free-delivery" onclick="freeDelButtonDisable()">Friday, Aug 25 Free
+                                        Prime Delivery</button>
+                                    <button id="paid-delivery" onclick="paidDelButtonDisable()">Friday, Aug 21 Delivery
+                                        Charge $20</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Shopping Total -->
+                        <!-- ----------------------Shopping Total --------------------------------->
                         <div class="container">
                             <div class="row">
 
@@ -81,7 +95,7 @@
                             </div>
                             <hr class="under-line">
                         </div>
-                        <!-- Total Price -->
+                        <!------------------------- Total Price --------------------------------->
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4">
@@ -94,7 +108,7 @@
                             </div>
                         </div>
 
-                        <!-- Promo Code -->
+                        <!---------------------- Promo Code ----------------------------------->
                         <div class="container ">
                             <div class="row mt-5">
                                 <div class="col-lg-12 col-md-12">
@@ -116,9 +130,13 @@
 
                 </div>
             </div>
+            <!----------------------- Wrong Promo alert -------------------->
+            <div class="wrong-code">
+                <p class="notify" id='wrongCode'>Oops!! Wrong Code</p>
+            </div>
         </section>
     </main>
-
+    <!--------------------------- Scrips ------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>

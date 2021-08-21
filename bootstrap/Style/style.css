@@ -8,5 +8,18 @@
 .promo-btn{
     padding-bottom: 0;
     padding-top:5px;
-    
+}
+
+.notify{
+    color: #fff;
+    text-align: center;
+    margin:auto;
+    background: #222436;
+    border-radius: 15px;
+    padding:5px 20px;
+    display: none;
+}
+.wrong-code{
+    width: 35%;
+    margin: 0 auto;
 }
