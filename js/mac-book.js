@@ -1,4 +1,4 @@
-//DISABLING 8GB Memory BUTTON
+/* //DISABLING 8GB Memory BUTTON
 function eightGBButtonDisable() {
     document.getElementById('eightGB-memory-btn').disabled = true;
     document.getElementById('sixteenGB-memory-btn').disabled = false;
@@ -36,31 +36,30 @@ function paidDelButtonDisable() {
     document.getElementById('free-delivery').disabled = false;
     document.getElementById('paid-delivery').disabled = true;
 }
-
-
+ */
+// Get id and store
 const totalPrice = document.getElementById('totalPrice');
-const grandAmount = document.getElementById('grand-total');
+let grandAmount = document.getElementById('grand-total');
 const extraMemoryCost = document.getElementById('extra-memory');
 const extraStorageCost = document.getElementById('extra-storage');
 const extraDeliveryCost = document.getElementById('delivery-charge');
-
+const promoInput = document.getElementById('promoCode-input');
 
 //Memory Selection
 document.getElementById("eightGB-memory-btn").addEventListener('click', function () {
-  
+
     extraMemoryCost.innerText = '0';
     calculateTotal();
 })
 document.getElementById("sixteenGB-memory-btn").addEventListener('click', function () {
-   
+
     extraMemoryCost.innerText = '180';
     calculateTotal();
 })
 
-
 //Storage Selection
 document.getElementById("ssd256-btn").addEventListener('click', function () {
-  
+
     extraStorageCost.innerText = '0';
     calculateTotal();
 })
@@ -71,7 +70,7 @@ document.getElementById("ssd512-btn").addEventListener('click', function () {
     calculateTotal();
 })
 document.getElementById("ssd1TB-btn").addEventListener('click', function () {
- 
+
     extraStorageCost.innerText = '180';
     calculateTotal();
 })
@@ -83,21 +82,43 @@ document.getElementById("free-delivery").addEventListener('click', function () {
     calculateTotal();
 })
 document.getElementById("paid-delivery").addEventListener('click', function () {
-  
+
     extraDeliveryCost.innerText = '20';
     calculateTotal();
 })
 
 //Calculate Total
 function calculateTotal() {
-    
+
     const memoryTotal = Number(extraMemoryCost.innerText);
     const storageTotal = Number(extraStorageCost.innerText);
     const deliveryTotal = Number(extraDeliveryCost.innerText);
 
-    const grandTotal = 1299 + memoryTotal + storageTotal + deliveryTotal;
+    let grandTotal = 1299 + memoryTotal + storageTotal + deliveryTotal;
     //console.log(grandTotal);
     totalPrice.innerText = grandTotal;
     grandAmount.innerText = grandTotal;
-    //console.log(totalPrice.innerText);
+    return totalPrice.innerText;
+    
+   
+}
+
+document.getElementById("promoCode-applyBtn").addEventListener("click", function () {
+    promoCode();
+})
+
+function promoCode(){
+    const promoText = promoInput.value;
+    totalPrice.innerText = calculateTotal();
+    //console.log(promoText);
+    if (promoText == "stevekaku") {
+        const discountAmount = Number((totalPrice.innerText * 20) / 100);
+        const AfterDiscountgrandTotal = Number(totalPrice.innerText - discountAmount);
+        grandAmount.innerText = Number(AfterDiscountgrandTotal);
+        //console.log(grandAmount.innerText)
+    }
+    else {
+        console.log("Oops! Wrong Code")
+    }
+    promoInput.value = '';
 }
